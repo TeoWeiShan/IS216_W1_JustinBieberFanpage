@@ -1,0 +1,284 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #1db954;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.hero {
+    height: 100vh;
+    background: url('img/justin4.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #1db954;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #17a34a;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1db954;
+}
+
+/* styles.css */
+.album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.album {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Maintain aspect ratio for square grid */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+}
+
+.album img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.album-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.album:hover .album-details {
+    opacity: 1;
+}
+
+.album:hover img {
+    opacity: 0.3; /* Dim the image to highlight details */
+}
+
+.album-details h3 {
+    margin-top: 0;
+}
+
+.album-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.album-details ul li {
+    padding: 5px 0;
+}
+
+
+
+/* styles.css */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: calc(33% - 10px); /* Adjust to show three images per row */
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* styles.css */
+.media-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between the items */
+    gap: 20px; /* Space between the items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.spotify, .youtube {
+    flex: 1; /* Allow each item to grow equally */
+    min-width: 300px; /* Set a minimum width for each item */
+    background-color: #222; /* Optional: Add a background color for better visual separation */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    padding: 20px; /* Add some padding inside the containers */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a subtle effect */
+}
+
+.spotify iframe, .youtube iframe {
+    width: 100%; /* Make the iframe take up the full width of its container */
+    border-radius: 10px; /* Optional: Add rounded corners to the iframes */
+}
+
+.youtube iframe {
+    max-width: 100%; /* Ensure the iframe does not exceed the container's width */
+}
+
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .gallery img {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .gallery img {
+        width: calc(50% - 10px); /* Two images per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: calc(100% - 10px); /* One image per row on very small screens */
+    }
+}
+
